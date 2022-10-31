@@ -1,0 +1,66 @@
+service: dwelling-app
+
+useDotenv: true
+
+plugins:
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+
+custom:
+  s3Sync:
+    - bucketName: dwelling-app
+      localDir: out
+      acl: public-read
+  cloudfrontInvalidate:
+    - distributionIdKey: CloudFrontDistributionId
+      items:
+        - /*
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+
+resources:
+  Resources:
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: dwelling-app
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: 404.html
+    CloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          DefaultCacheBehavior:
+            TargetOriginId: S3BucketOrigin
+            ViewerProtocolPolicy: redirect-to-https
+            DefaultTTL: 600
+            MaxTTL: 600
+            Compress: true
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+          DefaultRootObject: index.html
+          Enabled: true
+          PriceClass: PriceClass_100
+          HttpVersion: http2
+          ViewerCertificate:
+            CloudFrontDefaultCertificate: true
+          Origins:
+            - DomainName: dwelling-app.s3-website-us-east-1.amazonaws.com
+              Id: S3BucketOrigin
+              CustomOriginConfig:
+                HTTPPort: 80
+                HTTPSPort: 443
+                OriginProtocolPolicy: http-only
+  Outputs:
+    CloudFrontDistributionId:
+      Value:
+        Ref: CloudFrontDistribution
