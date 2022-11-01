@@ -1,6 +1,7 @@
 ## Description
 
 [URL](https://d3irm2gpt34l4z.cloudfront.net/)
+
 [Back-End Repo](https://github.com/karlpawlowicz/dwelling-service)
 
 ### Process
@@ -11,13 +12,13 @@ Once I understood what I was building, I would draft a proposal in a design doc 
 
 This exercise required React, so I built a Next.js (TypeScript) app on AWS (CloudFront, S3).
 
-I added a CI/CD pipeline using GitHub Actions that lints, tests, builds, and deploys the app as a static asset to S3 on each push.
+I added a CI/CD pipeline using GitHub Actions to lint, test, build, and deploy the app as a static asset to S3 on each push.
 
 I did not implement the number input error handling in the design and opted for a browser implementation. I also want to note that the consensus for a credit card field implementation is a `tel` input: https://stackoverflow.com/questions/48534229/what-is-the-correct-input-type-for-credit-card-numbers.
 
 ### Sample PRs
 
-- [https://github.com/karlpawlowicz/dwelling-app/pull/4](feat: add form)
+- https://github.com/karlpawlowicz/dwelling-app/pull/4
 
 ### If I Had More Time
 
