@@ -13,8 +13,8 @@ function reducer(state = initialState, action: any) {
     case actionTypes.FAILURE:
       return {
         ...state,
-        pending: false,
         error: action.error,
+        pending: false,
       };
     case actionTypes.LOAD_DATA:
       return {
@@ -24,10 +24,10 @@ function reducer(state = initialState, action: any) {
     case actionTypes.LOAD_DATA_SUCCESS:
       return {
         ...state,
-        pending: false,
         balancesData: [...state.balancesData, action.data].sort(
           (a, b) => b.currentBalance.value - a.currentBalance.value
         ),
+        pending: false,
       };
     case actionTypes.REMOVE:
       return {
