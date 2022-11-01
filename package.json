@@ -27,18 +27,22 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "next": "^12.3.0",
+    "next-redux-wrapper": "^8.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.2.1"
   },
   "devDependencies": {
-    "@silvermine/serverless-plugin-cloudfront-lambda-edge": "^2.2.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
+    "@types/shortid": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "eslint": "^8.23.0",
     "eslint-config-next": "^12.3.0",
@@ -56,6 +60,7 @@
     "jest-environment-jsdom": "^29.0.3",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "redux-devtools-extension": "^2.13.9",
     "serverless": "^3.22.0",
     "serverless-cloudfront-invalidate": "^1.12.2",
     "serverless-s3-sync": "^3.0.0",
