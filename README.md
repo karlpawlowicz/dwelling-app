@@ -5,11 +5,11 @@
 
 ### Process
 
-I began by reviewing the brief and requirements. In a real-world setting, at this stage, I would have had discussions with various stakeholders, such as an engineering and product manager.
+I began by reviewing the brief and requirements. In a real-world setting, at this stage, I would have discussions with various stakeholders, such as an engineering and product manager.
 
 Once I understood what I was building, I would draft a proposal in a design doc or RFC.
 
-The requirement for this exercise was to use React, so I built a Next.js (TypeScript) app on AWS (CloudFront, S3).
+This exercise required React, so I built a Next.js (TypeScript) app on AWS (CloudFront, S3).
 
 I added a CI/CD pipeline using GitHub Actions that lints, tests, builds, and deploys the app as a static asset to S3 on each push.
 
