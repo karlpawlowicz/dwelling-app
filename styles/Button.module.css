@@ -1,0 +1,22 @@
+.button {
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-top: 15px;
+  padding: 14.5px;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.button:active,
+.button:focus,
+.button:hover {
+  background: #faf5f1;
+  border: 1px solid #000;
+  color: #000;
+}
