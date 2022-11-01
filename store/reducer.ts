@@ -1,6 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
 
-import { actionTypes } from 'store/actions';
+import { actionTypes } from '@/store/actions';
 
 const initialState = {
   balancesData: [],

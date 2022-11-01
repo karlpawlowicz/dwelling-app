@@ -1,7 +1,7 @@
 import React, { FC, MouseEventHandler, ReactNode } from 'react';
 import clsx from 'clsx';
 
-import styles from 'styles/Button.module.css';
+import styles from '@/styles/Button.module.css';
 
 interface Props {
   ariaLabel: string;

@@ -1,6 +1,6 @@
 import { all, put, takeLatest } from 'redux-saga/effects';
 
-import { actionTypes, failure, loadDataSuccess } from 'store/actions';
+import { actionTypes, failure, loadDataSuccess } from '@/store/actions';
 
 interface Action {
   cardNumber: string;

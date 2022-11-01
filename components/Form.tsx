@@ -1,11 +1,11 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loadData, remove } from 'store/actions';
-import Icon from 'components/Icon';
-import Button from 'components/Button';
+import { loadData, remove } from '@/store/actions';
+import Icon from '@/components/Icon';
+import Button from '@/components/Button';
 
-import styles from 'styles/Form.module.css';
+import styles from '@/styles/Form.module.css';
 
 const Form: FC = () => {
   const pending = useSelector((state: any) => state.pending);

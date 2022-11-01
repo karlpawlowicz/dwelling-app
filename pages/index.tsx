@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Form from 'components/Form';
+import Form from '@/components/Form';
 
-import styles from 'styles/Home.module.css';
+import styles from '@/styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
