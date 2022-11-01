@@ -6,9 +6,9 @@ import styles from '@/styles/Button.module.css';
 interface Props {
   ariaLabel: string;
   className?: string;
-  clickHandler?: MouseEventHandler;
   children: ReactNode;
   disabled?: boolean;
+  onClick?: MouseEventHandler;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
@@ -16,8 +16,8 @@ const Button: FC<Props> = ({
   ariaLabel,
   children,
   className,
-  clickHandler,
   disabled,
+  onClick,
   type,
 }) => {
   className = clsx(styles.button, className);
@@ -27,7 +27,7 @@ const Button: FC<Props> = ({
       aria-label={ariaLabel}
       className={className}
       disabled={disabled}
-      onClick={clickHandler}
+      onClick={onClick}
       type={type}
     >
       {children}

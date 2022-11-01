@@ -112,7 +112,7 @@ const Form: FC = () => {
               <Button
                 ariaLabel="Remove card"
                 className={styles.remove}
-                clickHandler={() => handleRemove(element.cardNumber)}
+                onClick={() => handleRemove(element.cardNumber)}
               >
                 <Icon type="remove" />
               </Button>
